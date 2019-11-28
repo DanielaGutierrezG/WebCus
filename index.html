@@ -75,7 +75,7 @@
 
 
             <div class="site-logo">
-              <a href="index.html" class="text-black"><span class="text-primary">Cusela</a>
+              <a href="index.html" class="text-black"><img src="images/logocusela.PNG" class="logo"></a>
             </div>
 
             <div class="col-12">
@@ -84,17 +84,11 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                   <li><a href="#home-section" class="nav-link">Home</a></li>
                   <li><a href="#services-section" class="nav-link">Servicios</a></li>
-
-
-                  <li>
-                    <a href="#about-section" class="nav-link">Acerca</a>
-                    
-                  </li>
-
+                  <li><a href="#about-section" class="nav-link">Acerca</a></li>
                   <li><a href="#why-us-section" class="nav-link">Por que nosotros</a></li>
-
                   <li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
                   <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                  <li><a href="https://www.cusela.com.pe/agy/" class="nav-link"><button class="btn">Empresas</button></a></li>
                 </ul>
               </nav>
 
@@ -106,35 +100,81 @@
         </div>
 
       </header>
-
-      <div class="ftco-blocks-cover-1">
-        <div class="ftco-cover-1 overlay" style="background-image: url('images/principal.jpg')">
-          <div class="container">
-            <div class="row align-items-center justify-content-center text-center">
-              <div class="col-lg-6">
-                <h1>Un viaje, &amp; multiples experiencias</h1>
-                <p class="mb-5">Cusela es un operador de movilidad y transporte quien desde 15 años modifica la manera de viajar de miles de turistas en nuestro país.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        <div class ="book">
-          <div class="booking_input" ><select id="uc-from" placeholder="Origen" required="required">
-          <option value="-1">-- Origen --</option>
-          <option value="1">Cusco</option>
-          <option value="2">Puno</option> </select></div>
-        
-        <div class="booking_input"><select id="uc-to" placeholder="Destino" required="required">
-          <option value="-1">-- Destino --</option>
-          <option value="1">Cusco</option>
-          <option value="2">Puno</option> </select></div>
-        
-        <div class="booking_input"><input format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
-        
-        <div class="booking_input"><button>Book Now</button></div>
-        </div>
+    
+          <video style="width: 100%;" src="images/videocusela.mp4" autoplay muted loop></video>
+     
+         <div class ="book">
+           <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+           <option value="-1">-- Origen --</option>
+           <option value="1">Cusco</option>
+           <option value="2">Puno</option> </select></div>
+         
+         <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+           <option value="-1">-- Destino --</option>
+           <option value="1">Cusco</option>
+           <option value="2">Puno</option> </select></div>
+         
+         <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
+         
+         <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+         <script>
+            $(".book-now").click(function()
+            {
+            
+            if($("#uc-from").val()!=="-1")
+            {
+              if($("#uc-to").val()!="-1")
+              {
+                if($("#uc-from").val()!==$("#uc-to").val())
+                {
+                  if(($("#txt-date").val()).trim()!=="")
+                  {
+                    var str=($("#txt-date").val()).split("/");
+                    var _dt=str[2]+"-"+str[0]+"-"+str[1];
+                    window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
+                  }
+                  else
+                  {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Fecha Incorrecta!',
+                      footer: '<a href>Necesitas ayuda?</a>'
+                    })
+                  }
+                }
+                else
+                {
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Seleccione Origen y destino diferentes!'
+                      //footer: '<a href>Necesitas ayuda?</a>'
+                    })
+                }
+              }
+              else
+              {
+                Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Seleccione un destino!'
+                      //footer: '<a href>Necesitas ayuda?</a>'
+                    })
+              }
+            }
+            else
+            {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione un Origen'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+            }
+            });
+          </script>
+         </div>
    
         <center><div><img src="images/imgiti.jpg" alt="Image" class="rsol"></div></center>
 
@@ -236,19 +276,77 @@
       </div>
     
       <div class ="book">
-        <div class="booking_input" ><select id="uc-from" placeholder="Origen" required="required">
+        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
         <option value="-1">-- Origen --</option>
         <option value="1">Cusco</option>
         <option value="2">Puno</option> </select></div>
       
-      <div class="booking_input"><select id="uc-to" placeholder="Destino" required="required">
+      <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
         <option value="-1">-- Destino --</option>
         <option value="1">Cusco</option>
         <option value="2">Puno</option> </select></div>
       
-      <div class="booking_input"><input format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
+      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
       
-      <div class="booking_input"><button>Book Now</button></div>
+      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+
+      <script>
+          $(".book-now").click(function()
+          {
+          
+          if($("#uc-from").val()!=="-1")
+          {
+            if($("#uc-to").val()!="-1")
+            {
+              if($("#uc-from").val()!==$("#uc-to").val())
+              {
+                if(($("#txt-date").val()).trim()!=="")
+                {
+                  var str=($("#txt-date").val()).split("/");
+                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
+                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
+                }
+                else
+                {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Fecha Incorrecta!',
+                    footer: '<a href>Necesitas ayuda?</a>'
+                  })
+                }
+              }
+              else
+              {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione Origen y destino diferentes!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+              }
+            }
+            else
+            {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione un destino!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+            }
+          }
+          else
+          {
+            Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Seleccione un Origen'
+                  //footer: '<a href>Necesitas ayuda?</a>'
+                })
+          }
+          });
+        </script>
       </div>
 
 
@@ -264,31 +362,24 @@
               </div>
           <div class="owl-carousel owl-all">
             <div class="service text-center">
-              <a href="rutadelsol.html"><img src="images/ruta.jpg" alt="Image" class="img-fluid"></a>
+              <a href="rutadelsol.html"><img src="images/ruta.png" alt="Image" class="img-fluid"></a>
               <div class="px-md-3">
                 <h3><a href="rutadelsol.html">Ruta del Sol</a></h3>
                 <p>Conoce la cultura Quechua y Aymara con el soporte de la experiencia del transporte de turismo que nos acompaña, somos los profesionales de la ruta “Quechua y Aymara”.</p>
               </div>
             </div>
             <div class="service text-center">
-              <a href="#"><img src="images/transporte.jpg" alt="Image" class="img-fluid"></a>
+              <a href="trasnporte.html"><img src="images/transporte.png" alt="Image" class="img-fluid"></a>
               <div class="px-md-3">
-                <h3><a href="#">Transporte turistico</a></h3>
+                <h3><a href="trasnporte.html">Transporte turistico</a></h3>
                 <p>Nuestras modernas unidades están conformadas por camionetas, vans, sprinters, buses y buses Irizar implementados adecuadamente. Además, contamos con los permisos respectivos que garantizan un servicio eficiente.</p>
               </div>
             </div>
             <div class="service text-center">
-              <a href="#"><img src="images/tours.jpg" alt="Image" class="img-fluid"></a>
+              <a href="promociones.html"><img src="images/tours.png" alt="Image" class="img-fluid"></a>
               <div class="px-md-3">
-                <h3><a href="#">Promociones</a></h3>
+                <h3><a href="promociones.html">Promociones</a></h3>
                 <p>No te pierdas las mejores promociones de la temporada.</p>
-              </div>
-            </div>
-            <div class="service text-center">
-              <a href="#"><img src="images/tours.jpg" alt="Image" class="img-fluid"></a>
-              <div class="px-md-3">
-                <h3><a href="#">Cusela tours</a></h3>
-                <p>Disruta de los mejores tours con nuestra empresa.</p>
               </div>
             </div>
           </div>
@@ -334,7 +425,7 @@
               <div class="row">
                 <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="">
                   <div class="block-counter-1">
-                    <span class="number"><span data-number="2">0</span>+</span>
+                    <span class="number"><span data-number="13">0</span>+</span>
                     <span class="caption">Años en servicio</span>
                   </div>
                 </div>
@@ -408,6 +499,79 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class ="book">
+        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+        <option value="-1">-- Origen --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option> </select></div>
+      
+      <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+        <option value="-1">-- Destino --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option> </select></div>
+      
+      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
+      
+      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+      <script>
+          $(".book-now").click(function()
+          {
+          
+          if($("#uc-from").val()!=="-1")
+          {
+            if($("#uc-to").val()!="-1")
+            {
+              if($("#uc-from").val()!==$("#uc-to").val())
+              {
+                if(($("#txt-date").val()).trim()!=="")
+                {
+                  var str=($("#txt-date").val()).split("/");
+                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
+                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
+                }
+                else
+                {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Fecha Incorrecta!',
+                    footer: '<a href>Necesitas ayuda?</a>'
+                  })
+                }
+              }
+              else
+              {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione Origen y destino diferentes!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+              }
+            }
+            else
+            {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione un destino!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+            }
+          }
+          else
+          {
+            Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Seleccione un Origen'
+                  //footer: '<a href>Necesitas ayuda?</a>'
+                })
+          }
+          });
+        </script>
       </div>
 
       <div class="block__73694 site-section border-top" id="why-us-section">
@@ -512,6 +676,80 @@
         </div>
       </div>
 
+      <div class ="book">
+        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+        <option value="-1">-- Origen --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option> </select></div>
+      
+      <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+        <option value="-1">-- Destino --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option> </select></div>
+      
+      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
+      
+      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+
+      <script>
+          $(".book-now").click(function()
+          {
+          
+          if($("#uc-from").val()!=="-1")
+          {
+            if($("#uc-to").val()!="-1")
+            {
+              if($("#uc-from").val()!==$("#uc-to").val())
+              {
+                if(($("#txt-date").val()).trim()!=="")
+                {
+                  var str=($("#txt-date").val()).split("/");
+                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
+                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
+                }
+                else
+                {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Fecha Incorrecta!',
+                    footer: '<a href>Necesitas ayuda?</a>'
+                  })
+                }
+              }
+              else
+              {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione Origen y destino diferentes!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+              }
+            }
+            else
+            {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione un destino!'
+                    //footer: '<a href>Necesitas ayuda?</a>'
+                  })
+            }
+          }
+          else
+          {
+            Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Seleccione un Origen'
+                  //footer: '<a href>Necesitas ayuda?</a>'
+                })
+          }
+          });
+        </script>
+      </div>
+
       <div class="site-section py-5" id="blog-section">
         <div class="container">
           <div class="row justify-content-center text-center mb-5">
@@ -521,7 +759,6 @@
               </div>
             </div>
           </div>
-
           <center><div class="row">
             <div class="col-lg-6">
               <div class="mb-5 d-block blog-entry" data-aos="fade-right" data-aos-delay="">
@@ -549,7 +786,6 @@
             </div>
           </div>
           </center>
-          
 
     
     <footer class="site-footer">

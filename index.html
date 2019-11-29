@@ -30,43 +30,7 @@
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    
-
-    <div class="site-wrap" id="home-section">
-
-      <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-      </div>
-
-
-      <div class="top-bar">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">informes@cusela.com</span></a>
-              <span class="mx-md-2 d-inline-block"></span>
-              <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">(084) 224782</span></a>
-
-
-              <div class="float-right">
-
-                <a href="#https://www.facebook.com/cusela/"><span class="mr-2  icon-facebook"></span> <span class="d-none d-md-inline-block">Facebook</span></a>
-                <span class="mx-md-2 d-inline-block"></span>
-                <a href="#https://www.youtube.com/channel/UCo_s81KeKodDbmRwtQ5Xt0Q"><span class="mr-2  icon-youtube"></span> <span class="d-none d-md-inline-block">Youtube</span></a>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
+    <div style="position: relative; background-color: black;"><center><video style="width: 100%;" src="images/videocusela.mp4" autoplay muted loop></video></center>
 
       <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 
@@ -101,9 +65,9 @@
 
       </header>
     
-          <video style="width: 100%;" src="images/videocusela.mp4" autoplay muted loop></video>
+          
      
-         <div class ="book">
+         <div class ="book" style="position: absolute; left: 28%; top: 78%; z-index: 2;">
            <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
            <option value="-1">-- Origen --</option>
            <option value="1">Cusco</option>
@@ -117,6 +81,8 @@
          <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
          
          <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+        </div>
+      
          <script>
             $(".book-now").click(function()
             {
@@ -174,7 +140,8 @@
             }
             });
           </script>
-         </div>
+          </div>
+         
    
         <center><div><img src="images/imgiti.jpg" alt="Image" class="rsol"></div></center>
 

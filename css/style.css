@@ -200,14 +200,14 @@
   .primary-outline-primary--hover:hover {
     color: #fff;
     background: #007bff; }
-
-html {
-  overflow-x: hidden; }
-
+html{
+  overflow-x: hidden;
+}
 body {
   line-height: 1.7;
   font-weight: 400;
-  font-size: 1rem; }
+  font-size: 1rem; 
+overflow-x: hidden;}
   body:before {
     position: absolute;
     content: "";
@@ -253,7 +253,8 @@ color: #000; }
   border-width: 2px; }
 
 .text-black {
-  color: #000 !important; }
+  color: #000 !important;
+display: block; }
 
 .bg-black {
   background: #000 !important; }
@@ -288,7 +289,9 @@ color: #000; }
   .form-control:hover, .form-control:active, .form-control:focus {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
-
+.site-section-bottom{
+  padding-bottom: 0px !important;
+}
 .site-section {
   padding: 2.5em 0; }
   @media (min-width: 768px) {
@@ -329,7 +332,8 @@ color: #000; }
   color: rgba(255, 255, 255, 0.5); }
 
 .text-black-opacity-05 {
-  color: rgba(0, 0, 0, 0.5); }
+  color: rgba(0, 0, 0, 0.5);
+}
 
 .hover-bg-enlarge {
   overflow: hidden;
@@ -767,7 +771,8 @@ color: #000; }
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center; 
+  padding-top: 100px;}
   .site-section-cover,
   .site-section-cover .container {
     position: relative;
@@ -796,7 +801,8 @@ color: #000; }
   .site-section-cover.inner-page .container > .row {
     height: auto;
     min-height: auto;
-    padding: 2em 0; }
+    padding: 2em 0;
+  padding-top: 99px; }
   .site-section-cover.img-bg-section {
     background-size: cover;
     background-repeat: no-repeat; }
@@ -1394,7 +1400,13 @@ color: #000; }
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
-  margin-right: 20px; }
+ }
+ @media (max-width:500px){
+  .blog-entry .blog-thumbnail img{
+   width: 100%;
+   height: auto;
+  }
+ }
   .blog-entry .blog-thumbnail img {
     border-radius: 4px; }
 
@@ -1417,9 +1429,13 @@ color: #000; }
 }
 
 .book {
+ 
   display: flex;
   justify-content: center;
   background-color: black;
+}
+.book.{
+  position: absolute; left: 28%; top: 78%; z-index: 2;
 }
 
 
@@ -1429,6 +1445,17 @@ color: #000; }
 
 .rsol {
   max-width: 70%;
+}
+@media (max-width:991px){
+  .rsol{
+    max-width: 100%;
+  }
+}
+@media (max-width:500px){
+  .book.cover-book{
+   position: unset;
+  
+  }
 }
 
 .sel {
@@ -1457,6 +1484,13 @@ color: #000; }
 
 .logo {
   width: 50%;
+}
+.container-cover-video{
+  line-height: 0;
+}
+.cover-video{
+  max-width: 100%;
+  margin-top: 110px;
 }
 
 

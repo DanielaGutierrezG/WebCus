@@ -1,760 +1,759 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <title>Cusela</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-  </head>
-
- <!-- Start of HubSpot Embed Code -->
- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6432928.js"></script>
- <!-- End of HubSpot Embed Code -->
+<head>
+  <title>Cusela</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap" rel="stylesheet">
 
-    <div style="position: relative; background-color: black;"><center><video style="width: 100%;" src="images/videocusela.mp4" autoplay muted loop></video></center>
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-      <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-        <div class="container">
-          <div class="row align-items-center position-relative">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6432928.js"></script>
+<!-- End of HubSpot Embed Code -->
 
 
-            <div class="site-logo">
-              <a href="index.html" class="text-black"><img src="images/logocusela.PNG" class="logo"></a>
-            </div>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-            <div class="col-12">
-              <nav class="site-navigation text-right ml-auto " role="navigation">
+  <div style="position: relative; background-color: black;">
+    <center class="container-cover-video"><video class="cover-video" src="images/videocusela.mp4" autoplay muted
+        loop></video></center>
 
-                <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                  <li><a href="#home-section" class="nav-link">Home</a></li>
-                  <li><a href="#services-section" class="nav-link">Servicios</a></li>
-                  <li><a href="#about-section" class="nav-link">Acerca</a></li>
-                  <li><a href="#why-us-section" class="nav-link">Por que nosotros</a></li>
-                  <li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
-                  <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                  <li><a href="https://www.cusela.com.pe/agy/" class="nav-link"><button class="btn">Empresas</button></a></li>
-                </ul>
-              </nav>
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
 
-            </div>
+      <div class="container">
+        <div class="row align-items-center position-relative">
 
-            <div class="toggle-button d-inline-block d-lg-none"><a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
+          <div class="site-logo">
+            <a href="index.html" class="text-black"><img src="images/logocusela.PNG" class="logo"></a>
           </div>
-        </div>
 
-      </header>
-    
-          
-     
-         <div class ="book" style="position: absolute; left: 28%; top: 78%; z-index: 2;">
-           <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
-           <option value="-1">-- Origen --</option>
-           <option value="1">Cusco</option>
-           <option value="2">Puno</option> </select></div>
-         
-         <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
-           <option value="-1">-- Destino --</option>
-           <option value="1">Cusco</option>
-           <option value="2">Puno</option> </select></div>
-         
-         <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
-         
-         <div class="booking_input"><button class="btn book-now">Book Now</button></div>
-        </div>
-      
-         <script>
-            $(".book-now").click(function()
-            {
-            
-            if($("#uc-from").val()!=="-1")
-            {
-              if($("#uc-to").val()!="-1")
-              {
-                if($("#uc-from").val()!==$("#uc-to").val())
-                {
-                  if(($("#txt-date").val()).trim()!=="")
-                  {
-                    var str=($("#txt-date").val()).split("/");
-                    var _dt=str[2]+"-"+str[0]+"-"+str[1];
-                    window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
-                  }
-                  else
-                  {
-                    Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Fecha Incorrecta!',
-                      footer: '<a href>Necesitas ayuda?</a>'
-                    })
-                  }
-                }
-                else
-                {
-                  Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Seleccione Origen y destino diferentes!'
-                      //footer: '<a href>Necesitas ayuda?</a>'
-                    })
-                }
-              }
-              else
-              {
-                Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Seleccione un destino!'
-                      //footer: '<a href>Necesitas ayuda?</a>'
-                    })
-              }
-            }
-            else
-            {
-              Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione un Origen'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-            }
-            });
-          </script>
-          </div>
-         
-   
-        <center><div><img src="images/imgiti.jpg" alt="Image" class="rsol"></div></center>
+          <div class="col-12">
+            <nav class="site-navigation text-right ml-auto " role="navigation">
 
-
-
-      <div class="site-section bg-light" id="services-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-md-7 text-center">
-              <div class="block-heading-1">
-                <h2>Beneficios</h2>
-                <p>Nuestros clientes nos recomiendan por</p>
-              </div>
-            </div>
-          </div>
-          <div class="owl-carousel owl-all">
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
-                  <center><img src="images/guia.png" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Guia personalizado</h3>
-              <p>Aguia para cada idioma INGLÉS/ESPAÑOL. </p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
-                  <center><img src="images/terminal.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Terminal propio</h3>
-              <p>Contamos con terminal propio para mejorar nuestro servicio. </p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="https://www.youtube.com/watch?v=lwjN8ojRMlc" data-fancybox data-ratio="2">
-                  <center><img src="images/checacupe.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Checacupe</h3>
-              <p>Somos los unicos que visitamos Checacupe en nuestro recorrido.</p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="images/wifi.jpg" data-fancybox data-ratio="2">
-                  <center><img src="images/wifi.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Wifi</h3>
-              <p>Disfruta de lo nuevo con la mejor velocidad del mercado.</p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="images/asientos.jpg" data-fancybox data-ratio="2">
-                  <center><img src="images/asientos.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Asientos confortables</h3>
-              <p>Usted puede viajar más de 12 horas sin que se sienta incómodo.</p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="images/segur.JPG" data-fancybox data-ratio="2">
-                  <center><img src="images/segur.JPG" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Seguridad</h3>
-              <p>Contamos con la mejor tecnología en buses.</p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="images/buses.jpg" data-fancybox data-ratio="2">
-                  <center><img src="images/buses.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Buses modernos</h3>
-              <p>Contamos con la mejor tecnología en buses.</p>
-            </div>
-
-            <div class="block__35630 text-center">
-              <div class="icon mb-0">
-                <a href="images/resrva.jpg" data-fancybox data-ratio="2">
-                  <center><img src="images/resrva.jpg" alt="Image" class="lol"></center>
-                </a>
-              </div>
-              <h3 class="mb-3">Facil reserva</h3>
-              <p>Puede comprar su boleto de viaje con Cash, Visa, Master Card, etc.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    
-      <div class ="book">
-        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
-        <option value="-1">-- Origen --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
-      <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
-        <option value="-1">-- Destino --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
-      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
-      
-      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
-
-      <script>
-          $(".book-now").click(function()
-          {
-          
-          if($("#uc-from").val()!=="-1")
-          {
-            if($("#uc-to").val()!="-1")
-            {
-              if($("#uc-from").val()!==$("#uc-to").val())
-              {
-                if(($("#txt-date").val()).trim()!=="")
-                {
-                  var str=($("#txt-date").val()).split("/");
-                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
-                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
-                }
-                else
-                {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Fecha Incorrecta!',
-                    footer: '<a href>Necesitas ayuda?</a>'
-                  })
-                }
-              }
-              else
-              {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione Origen y destino diferentes!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-              }
-            }
-            else
-            {
-              Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione un destino!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-            }
-          }
-          else
-          {
-            Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'Seleccione un Origen'
-                  //footer: '<a href>Necesitas ayuda?</a>'
-                })
-          }
-          });
-        </script>
-      </div>
-
-
-      <!-- END .ftco-cover-1 -->
-      <div class="site-section ftco-service-image-1 pb-5">
-        <div class="container">
-            <div class="row mb-5 justify-content-center">
-                <div class="col-md-7 text-center">
-                  <div class="block-heading-1">
-                    <h2>Servicios</h2>
-                  </div>
-                </div>
-              </div>
-          <div class="owl-carousel owl-all">
-            <div class="service text-center">
-              <a href="rutadelsol.html"><img src="images/ruta.png" alt="Image" class="img-fluid"></a>
-              <div class="px-md-3">
-                <h3><a href="rutadelsol.html">Ruta del Sol</a></h3>
-                <p>Conoce la cultura Quechua y Aymara con el soporte de la experiencia del transporte de turismo que nos acompaña, somos los profesionales de la ruta “Quechua y Aymara”.</p>
-              </div>
-            </div>
-            <div class="service text-center">
-              <a href="trasnporte.html"><img src="images/transporte.png" alt="Image" class="img-fluid"></a>
-              <div class="px-md-3">
-                <h3><a href="trasnporte.html">Transporte turistico</a></h3>
-                <p>Nuestras modernas unidades están conformadas por camionetas, vans, sprinters, buses y buses Irizar implementados adecuadamente. Además, contamos con los permisos respectivos que garantizan un servicio eficiente.</p>
-              </div>
-            </div>
-            <div class="service text-center">
-              <a href="promociones.html"><img src="images/tours.png" alt="Image" class="img-fluid"></a>
-              <div class="px-md-3">
-                <h3><a href="promociones.html">Promociones</a></h3>
-                <p>No te pierdas las mejores promociones de la temporada.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <div class="site-section" id="about-section">
-
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-md-7 text-center">
-              <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
-                <h2>Acerca de nosotros</h2>
-                <p>En los últimos años hemos logrado construir una solida empresa de transporte de pasajeros aliando novedosas estrategias y servicios premium para nuestros pasajeros.
-                  Disponemos de un servicio de reservas simplificado y ofertas de servicio innovadores para descubrir los tesoros de nuestro Perú.
-                  Construimos una alternativa ecológica con unidades de transporte modernos y mantenidos con los mas altos niveles de seguridad y confort.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-
-      <div class="site-section bg-light" id="about-section">
-        <div class="container">
-          <div class="row justify-content-center mb-4 block-img-video-1-wrap">
-            <div class="col-md-12 mb-5">
-              <figure class="block-img-video-1" data-aos="fade">
-                <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
-                <span class="icon"><span class="icon-play"></span></span>
-                <center><img src="images/vive.png" alt="Image" class="img-fluid"></center>
-              </a>
-              </figure>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="">
-                  <div class="block-counter-1">
-                    <span class="number"><span data-number="13">0</span>+</span>
-                    <span class="caption">Años en servicio</span>
-                  </div>
-                </div>
-                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                  <div class="block-counter-1">
-                    <span class="number"><span data-number="350">0</span>+</span>
-                    <span class="caption">Empleados</span>
-                  </div>
-                </div>
-                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                  <div class="block-counter-1">
-                    <span class="number"><span data-number="1500">0</span>+</span>
-                    <span class="caption">viajes</span>
-                  </div>
-                </div>
-                <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                  <div class="block-counter-1">
-                    <span class="number"><span data-number="5000">0</span>+</span>
-                    <span class="caption">Clientes felices</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  
-      <div class="site-section" id="faq-section">
-        <div class="container">
-          <div class="row mb-5">
-            <div class="block-heading-1 col-12 text-center">
-              <h2>Preguntas frecuentes</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿Hasta donde llega la ruta del sol?</h3>
-                <p>Salimos desde Cusco hasta Puno. </p>
-              </div>
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿A que hora salen los buses para la ruta del sol?</h3>
-                <p>Nuestros buses salen a las 6:45 de la mañana. </p>
-              </div>
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿Puedo reservar boletos para otra persona?</h3>
-                <p>Si. Asegurate de tener toda la informacion necesaria para llenar los campos de pasajero. </p>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿Donde es el terminal terrestre?</h3>
-                <p>Av. Industrial 550, Huncaro Cusco - Santiago. </p>
-              </div>
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿Donde puedo comprar mis boletos?</h3>
-                <p>En el sistemas de reservas de Cusela o en nuestro terminal terrestre. </p>
-              </div>
-
-              <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-black h4 mb-4">¿Con cuánto tiempo de anticipación debo comprar mis boletos?</h3>
-                <p>Te recomendamos comprarlos con un dia de anticipación. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class ="book">
-        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
-        <option value="-1">-- Origen --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
-      <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
-        <option value="-1">-- Destino --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
-      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
-      
-      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
-      <script>
-          $(".book-now").click(function()
-          {
-          
-          if($("#uc-from").val()!=="-1")
-          {
-            if($("#uc-to").val()!="-1")
-            {
-              if($("#uc-from").val()!==$("#uc-to").val())
-              {
-                if(($("#txt-date").val()).trim()!=="")
-                {
-                  var str=($("#txt-date").val()).split("/");
-                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
-                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
-                }
-                else
-                {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Fecha Incorrecta!',
-                    footer: '<a href>Necesitas ayuda?</a>'
-                  })
-                }
-              }
-              else
-              {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione Origen y destino diferentes!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-              }
-            }
-            else
-            {
-              Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione un destino!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-            }
-          }
-          else
-          {
-            Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'Seleccione un Origen'
-                  //footer: '<a href>Necesitas ayuda?</a>'
-                })
-          }
-          });
-        </script>
-      </div>
-
-      <div class="block__73694 site-section border-top" id="why-us-section">
-        <div class="container">
-          <div class="row d-flex no-gutters align-items-stretch">
-
-            <div class="col-12 col-lg-6 block__73422 order-lg-2" style="background-image: url('images/cuse.jpg');" data-aos="fade-left" data-aos-delay="">
-            </div>
-
-
-
-            <div class="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1" data-aos="fade-right" data-aos-delay="">
-              <h2 class="mb-4 text-black">¿Por que Cusela?</h2>
-              <p>Nuestra propuesta te permite conocer imperdibles atractivos en el camino</p>
-
-              <ul class="ul-check primary list-unstyled mt-5">
-                <li>Contamos con audio phones en varios idiomas.</li>
-                <li>Somos los unicos que visitamos Checacupe en nuestros recorridos.</li>
-                <li>Tenemos nuestro exclusivo Kiosko Cusela.</li>
-                <li>Contamos con un restaurant exclusivo de Cusela.</li>
-                <li>Degustamos el famoso pan Chuta</li>
+              <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#services-section" class="nav-link">Servicios</a></li>
+                <li><a href="#about-section" class="nav-link">Acerca</a></li>
+                <li><a href="#why-us-section" class="nav-link">Por que nosotros</a></li>
+                <li><a href="#testimonials-section" class="nav-link">Testimonios</a></li>
+                <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                <li><a href="https://www.cusela.com.pe/agy/" class="nav-link"><button class="btn">Empresas</button></a>
+                </li>
               </ul>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <div class="site-section bg-light block-13" id="testimonials-section" data-aos="fade">
-        <div class="container">
-
-          <div class="text-center mb-5">
-            <div class="block-heading-1">
-              <h2>Clientes felices</h2>
-            </div>
-          </div>
-
-          <div class="owl-carousel nonloop-block-13">
-            <div>
-              <div class="block-testimony-1 text-center">
-
-                <blockquote class="mb-4">
-                  <p>&ldquo;Excelente servicio. Max fue un guía muy bueno, siempre atento, servicial y con gran conocimiento sobre los lugares que visitamos. Fueron 10 horas de viaje pero no se sintieron y el almuerzo estuvo exquisito. Super recomendable.&rdquo;</p>
-                </blockquote>
-
-                <figure>
-                  <img src="images/jeysi.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 text-black">Jeysi Ochoa</h3>
-              </div>
-            </div>
-
-            <div>
-              <div class="block-testimony-1 text-center">
-                <blockquote class="mb-4">
-                  <p>&ldquo;Excelente servicio. Asi como la atención. siempre cuidando al turista, desde el guía hasta el chófer. El turista es lo primero. Felicidades y súper recomendable.&rdquo;</p>
-                </blockquote>
-                <figure>
-                  <img src="images/yadira.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 mb-4 text-black">Yadira B</h3>
-
-              </div>
-            </div>
-
-            <div>
-              <div class="block-testimony-1 text-center">
-
-
-                <blockquote class="mb-4">
-                  <p>&ldquo;Super recomendado, viajamos a Puno, hicimos varias paradas, el guía Max nos dio explicaciones muy completas...&rdquo;</p>
-                </blockquote>
-
-                <figure>
-                  <img src="images/merlyn.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 text-black">Merlyn Morales</h3>
-
-
-              </div>
-            </div>
-
-            <div>
-              <div class="block-testimony-1 text-center">
-                <blockquote class="mb-4">
-                  <p>&ldquo;I just wanted to thank Max for a brilliant tour from Puno to Cusco. Also Maro (?) our driver. We had a puncture but we had a great time and they ensure we saw every thing as planned. Please pass on my thanks to them&rdquo;</p>
-                </blockquote>
-
-                <figure>
-                  <img src="images/rob.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
-                </figure>
-                <h3 class="font-size-20 mb-4 text-black">Rob Alvis</h3>
-
-              </div>
-            </div>
-
+            </nav>
 
           </div>
+
+          <div class="toggle-button d-inline-block d-lg-none"><a href="#"
+              class="site-menu-toggle py-5 js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
         </div>
       </div>
 
-      <div class ="book">
-        <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
-        <option value="-1">-- Origen --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
+    </header>
+
+
+
+    <div class="book cover-book">
+      <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+          <option value="-1">-- Origen --</option>
+          <option value="1">Cusco</option>
+          <option value="2">Puno</option>
+        </select></div>
+
       <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
-        <option value="-1">-- Destino --</option>
-        <option value="1">Cusco</option>
-        <option value="2">Puno</option> </select></div>
-      
-      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha" required="required" type="date" /></div>
-      
-      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+          <option value="-1">-- Destino --</option>
+          <option value="1">Cusco</option>
+          <option value="2">Puno</option>
+        </select></div>
 
-      <script>
-          $(".book-now").click(function()
-          {
-          
-          if($("#uc-from").val()!=="-1")
-          {
-            if($("#uc-to").val()!="-1")
-            {
-              if($("#uc-from").val()!==$("#uc-to").val())
-              {
-                if(($("#txt-date").val()).trim()!=="")
-                {
-                  var str=($("#txt-date").val()).split("/");
-                  var _dt=str[2]+"-"+str[0]+"-"+str[1];
-                  window.location = "https://www.cusela.com.pe/publico/itinerario/listar/"+$("#uc-from").val()+"/"+$("#uc-to").val()+"/"+_dt+"";
-                }
-                else
-                {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Fecha Incorrecta!',
-                    footer: '<a href>Necesitas ayuda?</a>'
-                  })
-                }
+      <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha"
+          required="required" type="date" /></div>
+
+      <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+    </div>
+
+    <script>
+      $(".book-now").click(function () {
+
+        if ($("#uc-from").val() !== "-1") {
+          if ($("#uc-to").val() != "-1") {
+            if ($("#uc-from").val() !== $("#uc-to").val()) {
+              if (($("#txt-date").val()).trim() !== "") {
+                var str = ($("#txt-date").val()).split("/");
+                var _dt = str[2] + "-" + str[0] + "-" + str[1];
+                window.location = "https://www.cusela.com.pe/publico/itinerario/listar/" + $("#uc-from").val() + "/" + $("#uc-to").val() + "/" + _dt + "";
               }
-              else
-              {
+              else {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione Origen y destino diferentes!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-              }
-            }
-            else
-            {
-              Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Seleccione un destino!'
-                    //footer: '<a href>Necesitas ayuda?</a>'
-                  })
-            }
-          }
-          else
-          {
-            Swal.fire({
                   icon: 'error',
                   title: 'Oops...',
-                  text: 'Seleccione un Origen'
-                  //footer: '<a href>Necesitas ayuda?</a>'
+                  text: 'Fecha Incorrecta!',
+                  footer: '<a href>Necesitas ayuda?</a>'
                 })
+              }
+            }
+            else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Seleccione Origen y destino diferentes!'
+                //footer: '<a href>Necesitas ayuda?</a>'
+              })
+            }
           }
-          });
-        </script>
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Seleccione un destino!'
+              //footer: '<a href>Necesitas ayuda?</a>'
+            })
+          }
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione un Origen'
+            //footer: '<a href>Necesitas ayuda?</a>'
+          })
+        }
+      });
+    </script>
+  </div>
+
+
+  <center>
+    <div><img src="images/imgiti.jpg" alt="Image" class="rsol"></div>
+  </center>
+
+
+
+  <div class="site-section bg-light" id="services-section">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-7 text-center">
+          <div class="block-heading-1">
+            <h2>Beneficios</h2>
+            <p>Nuestros clientes nos recomiendan por</p>
+          </div>
+        </div>
+      </div>
+      <div class="owl-carousel owl-all">
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
+              <center><img src="images/guia.png" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Guia personalizado</h3>
+          <p>Aguia para cada idioma INGLÉS/ESPAÑOL. </p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
+              <center><img src="images/terminal.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Terminal propio</h3>
+          <p>Contamos con terminal propio para mejorar nuestro servicio. </p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="https://www.youtube.com/watch?v=lwjN8ojRMlc" data-fancybox data-ratio="2">
+              <center><img src="images/checacupe.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Checacupe</h3>
+          <p>Somos los unicos que visitamos Checacupe en nuestro recorrido.</p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="images/wifi.jpg" data-fancybox data-ratio="2">
+              <center><img src="images/wifi.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Wifi</h3>
+          <p>Disfruta de lo nuevo con la mejor velocidad del mercado.</p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="images/asientos.jpg" data-fancybox data-ratio="2">
+              <center><img src="images/asientos.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Asientos confortables</h3>
+          <p>Usted puede viajar más de 12 horas sin que se sienta incómodo.</p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="images/segur.JPG" data-fancybox data-ratio="2">
+              <center><img src="images/segur.JPG" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Seguridad</h3>
+          <p>Contamos con la mejor tecnología en buses.</p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="images/buses.jpg" data-fancybox data-ratio="2">
+              <center><img src="images/buses.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Buses modernos</h3>
+          <p>Contamos con la mejor tecnología en buses.</p>
+        </div>
+
+        <div class="block__35630 text-center">
+          <div class="icon mb-0">
+            <a href="images/resrva.jpg" data-fancybox data-ratio="2">
+              <center><img src="images/resrva.jpg" alt="Image" class="lol"></center>
+            </a>
+          </div>
+          <h3 class="mb-3">Facil reserva</h3>
+          <p>Puede comprar su boleto de viaje con Cash, Visa, Master Card, etc.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="book">
+    <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+        <option value="-1">-- Origen --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+        <option value="-1">-- Destino --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha"
+        required="required" type="date" /></div>
+
+    <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+
+    <script>
+      $(".book-now").click(function () {
+
+        if ($("#uc-from").val() !== "-1") {
+          if ($("#uc-to").val() != "-1") {
+            if ($("#uc-from").val() !== $("#uc-to").val()) {
+              if (($("#txt-date").val()).trim() !== "") {
+                var str = ($("#txt-date").val()).split("/");
+                var _dt = str[2] + "-" + str[0] + "-" + str[1];
+                window.location = "https://www.cusela.com.pe/publico/itinerario/listar/" + $("#uc-from").val() + "/" + $("#uc-to").val() + "/" + _dt + "";
+              }
+              else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Fecha Incorrecta!',
+                  footer: '<a href>Necesitas ayuda?</a>'
+                })
+              }
+            }
+            else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Seleccione Origen y destino diferentes!'
+                //footer: '<a href>Necesitas ayuda?</a>'
+              })
+            }
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Seleccione un destino!'
+              //footer: '<a href>Necesitas ayuda?</a>'
+            })
+          }
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione un Origen'
+            //footer: '<a href>Necesitas ayuda?</a>'
+          })
+        }
+      });
+    </script>
+  </div>
+
+
+  <!-- END .ftco-cover-1 -->
+  <div class="site-section ftco-service-image-1 pb-5">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-7 text-center">
+          <div class="block-heading-1">
+            <h2>Servicios</h2>
+          </div>
+        </div>
+      </div>
+      <div class="owl-carousel owl-all">
+        <div class="service text-center">
+          <a href="rutadelsol.html"><img src="images/ruta.png" alt="Image" class="img-fluid"></a>
+          <div class="px-md-3">
+            <h3><a href="rutadelsol.html">Ruta del Sol</a></h3>
+            <p>Conoce la cultura Quechua y Aymara con el soporte de la experiencia del transporte de turismo que nos
+              acompaña, somos los profesionales de la ruta “Quechua y Aymara”.</p>
+          </div>
+        </div>
+        <div class="service text-center">
+          <a href="trasnporte.html"><img src="images/transporte.png" alt="Image" class="img-fluid"></a>
+          <div class="px-md-3">
+            <h3><a href="trasnporte.html">Transporte turistico</a></h3>
+            <p>Nuestras modernas unidades están conformadas por camionetas, vans, sprinters, buses y buses Irizar
+              implementados adecuadamente. Además, contamos con los permisos respectivos que garantizan un servicio
+              eficiente.</p>
+          </div>
+        </div>
+        <div class="service text-center">
+          <a href="promociones.html"><img src="images/tours.png" alt="Image" class="img-fluid"></a>
+          <div class="px-md-3">
+            <h3><a href="promociones.html">Promociones</a></h3>
+            <p>No te pierdas las mejores promociones de la temporada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section" id="about-section">
+
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-7 text-center">
+          <div class="block-heading-1" data-aos="fade-up" data-aos-delay="">
+            <h2>Acerca de nosotros</h2>
+            <p>En los últimos años hemos logrado construir una solida empresa de transporte de pasajeros aliando
+              novedosas estrategias y servicios premium para nuestros pasajeros.
+              Disponemos de un servicio de reservas simplificado y ofertas de servicio innovadores para descubrir los
+              tesoros de nuestro Perú.
+              Construimos una alternativa ecológica con unidades de transporte modernos y mantenidos con los mas altos
+              niveles de seguridad y confort.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="site-section bg-light" id="about-section">
+    <div class="container">
+      <div class="row justify-content-center mb-4 block-img-video-1-wrap">
+        <div class="col-md-12 mb-5">
+          <figure class="block-img-video-1" data-aos="fade">
+            <a href="https://www.youtube.com/watch?v=5bJiw2g0Hxc" data-fancybox data-ratio="2">
+              <span class="icon"><span class="icon-play"></span></span>
+              <center><img src="images/vive.png" alt="Image" class="img-fluid"></center>
+            </a>
+          </figure>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="">
+              <div class="block-counter-1">
+                <span class="number"><span data-number="13">0</span>+</span>
+                <span class="caption">Años en servicio</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="block-counter-1">
+                <span class="number"><span data-number="350">0</span>+</span>
+                <span class="caption">Empleados</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="block-counter-1">
+                <span class="number"><span data-number="1500">0</span>+</span>
+                <span class="caption">viajes</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-6 mb-4 col-lg-0 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="block-counter-1">
+                <span class="number"><span data-number="5000">0</span>+</span>
+                <span class="caption">Clientes felices</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="site-section" id="faq-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="block-heading-1 col-12 text-center">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿Hasta donde llega la ruta del sol?</h3>
+            <p>Salimos desde Cusco hasta Puno. </p>
+          </div>
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿A que hora salen los buses para la ruta del sol?</h3>
+            <p>Nuestros buses salen a las 6:45 de la mañana. </p>
+          </div>
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿Puedo reservar boletos para otra persona?</h3>
+            <p>Si. Asegurate de tener toda la informacion necesaria para llenar los campos de pasajero. </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿Donde es el terminal terrestre?</h3>
+            <p>Av. Industrial 550, Huncaro Cusco - Santiago. </p>
+          </div>
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿Donde puedo comprar mis boletos?</h3>
+            <p>En el sistemas de reservas de Cusela o en nuestro terminal terrestre. </p>
+          </div>
+
+          <div class="mb-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-black h4 mb-4">¿Con cuánto tiempo de anticipación debo comprar mis boletos?</h3>
+            <p>Te recomendamos comprarlos con un dia de anticipación. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="book">
+    <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+        <option value="-1">-- Origen --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+        <option value="-1">-- Destino --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha"
+        required="required" type="date" /></div>
+
+    <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+    <script>
+      $(".book-now").click(function () {
+
+        if ($("#uc-from").val() !== "-1") {
+          if ($("#uc-to").val() != "-1") {
+            if ($("#uc-from").val() !== $("#uc-to").val()) {
+              if (($("#txt-date").val()).trim() !== "") {
+                var str = ($("#txt-date").val()).split("/");
+                var _dt = str[2] + "-" + str[0] + "-" + str[1];
+                window.location = "https://www.cusela.com.pe/publico/itinerario/listar/" + $("#uc-from").val() + "/" + $("#uc-to").val() + "/" + _dt + "";
+              }
+              else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Fecha Incorrecta!',
+                  footer: '<a href>Necesitas ayuda?</a>'
+                })
+              }
+            }
+            else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Seleccione Origen y destino diferentes!'
+                //footer: '<a href>Necesitas ayuda?</a>'
+              })
+            }
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Seleccione un destino!'
+              //footer: '<a href>Necesitas ayuda?</a>'
+            })
+          }
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione un Origen'
+            //footer: '<a href>Necesitas ayuda?</a>'
+          })
+        }
+      });
+    </script>
+  </div>
+
+  <div class="block__73694 site-section border-top" id="why-us-section">
+    <div class="container">
+      <div class="row d-flex no-gutters align-items-stretch">
+
+        <div class="col-12 col-lg-6 block__73422 order-lg-2" style="background-image: url('images/cuse.jpg');"
+          data-aos="fade-left" data-aos-delay="">
+        </div>
+
+
+
+        <div class="col-lg-5 mr-auto p-lg-5 mt-4 mt-lg-0 order-lg-1" data-aos="fade-right" data-aos-delay="">
+          <h2 class="mb-4 text-black">¿Por que Cusela?</h2>
+          <p>Nuestra propuesta te permite conocer imperdibles atractivos en el camino</p>
+
+          <ul class="ul-check primary list-unstyled mt-5">
+            <li>Contamos con audio phones en varios idiomas.</li>
+            <li>Somos los unicos que visitamos Checacupe en nuestros recorridos.</li>
+            <li>Tenemos nuestro exclusivo Kiosko Cusela.</li>
+            <li>Contamos con un restaurant exclusivo de Cusela.</li>
+            <li>Degustamos el famoso pan Chuta</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="site-section bg-light block-13" id="testimonials-section" data-aos="fade">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <div class="block-heading-1">
+          <h2>Clientes felices</h2>
+        </div>
       </div>
 
-      <div class="site-section py-5" id="blog-section">
-        <div class="container">
-          <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="block-heading-1" data-aos="fade-right" data-aos-delay="">
-                <h2>Articulos</h2>
+      <div class="owl-carousel nonloop-block-13">
+        <div>
+          <div class="block-testimony-1 text-center">
+
+            <blockquote class="mb-4">
+              <p>&ldquo;Excelente servicio. Max fue un guía muy bueno, siempre atento, servicial y con gran conocimiento
+                sobre los lugares que visitamos. Fueron 10 horas de viaje pero no se sintieron y el almuerzo estuvo
+                exquisito. Super recomendable.&rdquo;</p>
+            </blockquote>
+
+            <figure>
+              <img src="images/jeysi.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
+            </figure>
+            <h3 class="font-size-20 text-black">Jeysi Ochoa</h3>
+          </div>
+        </div>
+
+        <div>
+          <div class="block-testimony-1 text-center">
+            <blockquote class="mb-4">
+              <p>&ldquo;Excelente servicio. Asi como la atención. siempre cuidando al turista, desde el guía hasta el
+                chófer. El turista es lo primero. Felicidades y súper recomendable.&rdquo;</p>
+            </blockquote>
+            <figure>
+              <img src="images/yadira.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
+            </figure>
+            <h3 class="font-size-20 mb-4 text-black">Yadira B</h3>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="block-testimony-1 text-center">
+
+
+            <blockquote class="mb-4">
+              <p>&ldquo;Super recomendado, viajamos a Puno, hicimos varias paradas, el guía Max nos dio explicaciones
+                muy completas...&rdquo;</p>
+            </blockquote>
+
+            <figure>
+              <img src="images/merlyn.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
+            </figure>
+            <h3 class="font-size-20 text-black">Merlyn Morales</h3>
+
+
+          </div>
+        </div>
+
+        <div>
+          <div class="block-testimony-1 text-center">
+            <blockquote class="mb-4">
+              <p>&ldquo;I just wanted to thank Max for a brilliant tour from Puno to Cusco. Also Maro (?) our driver. We
+                had a puncture but we had a great time and they ensure we saw every thing as planned. Please pass on my
+                thanks to them&rdquo;</p>
+            </blockquote>
+
+            <figure>
+              <img src="images/rob.jpg" alt="Image" class="img-fluid rounded-circle mx-auto">
+            </figure>
+            <h3 class="font-size-20 mb-4 text-black">Rob Alvis</h3>
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="book">
+    <div class="booking_input"><select class="sel" id="uc-from" placeholder="Origen" required="required">
+        <option value="-1">-- Origen --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><select class="sel" id="uc-to" placeholder="Destino" required="required">
+        <option value="-1">-- Destino --</option>
+        <option value="1">Cusco</option>
+        <option value="2">Puno</option>
+      </select></div>
+
+    <div class="booking_input"><input class="sel" format="yyyy-mm-dd" id="txt-date" placeholder="Fecha"
+        required="required" type="date" /></div>
+
+    <div class="booking_input"><button class="btn book-now">Book Now</button></div>
+
+    <script>
+      $(".book-now").click(function () {
+
+        if ($("#uc-from").val() !== "-1") {
+          if ($("#uc-to").val() != "-1") {
+            if ($("#uc-from").val() !== $("#uc-to").val()) {
+              if (($("#txt-date").val()).trim() !== "") {
+                var str = ($("#txt-date").val()).split("/");
+                var _dt = str[2] + "-" + str[0] + "-" + str[1];
+                window.location = "https://www.cusela.com.pe/publico/itinerario/listar/" + $("#uc-from").val() + "/" + $("#uc-to").val() + "/" + _dt + "";
+              }
+              else {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Fecha Incorrecta!',
+                  footer: '<a href>Necesitas ayuda?</a>'
+                })
+              }
+            }
+            else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Seleccione Origen y destino diferentes!'
+                //footer: '<a href>Necesitas ayuda?</a>'
+              })
+            }
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Seleccione un destino!'
+              //footer: '<a href>Necesitas ayuda?</a>'
+            })
+          }
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione un Origen'
+            //footer: '<a href>Necesitas ayuda?</a>'
+          })
+        }
+      });
+    </script>
+  </div>
+
+  <div class="site-section py-5 site-section-bottom" id="blog-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="block-heading-1" data-aos="fade-right" data-aos-delay="">
+            <h2>Articulos</h2>
+          </div>
+        </div>
+      </div>
+      <center>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="mb-5 d-block blog-entry" data-aos="fade-right" data-aos-delay="">
+              <a href="puno.html" class="blog-thumbnail mb-3 d-block"><img src="images/puno.jpg" alt="Image"
+                  class="bl"></a>
+              <div class="blog-excerpt">
+                <span class="d-block text-muted">Octubre 15, 2019</span>
+                <h2 class="h4  mb-3"><a href="puno.html">Historia de Puno</a></h2>
+
+                <p>Antes de la llegada de los españoles, la ciudad de Puno, era una aldea, tenía como escenario la Bahía
+                  del Lago Titikaka, formaba una población marginal localizada entre los linderos de los territorios de
+                  los Kollas (Quechuas) al norte y los Lupacas (Aymaras) al sur.</p>
+                <p><a href="puno.html" class="text-primary">Leer más</a></p>
               </div>
             </div>
           </div>
-          <center><div class="row">
-            <div class="col-lg-6">
-              <div class="mb-5 d-block blog-entry" data-aos="fade-right" data-aos-delay="">
-                <a href="puno.html" class="blog-thumbnail mb-3 d-block"><img src="images/puno.jpg" alt="Image" class="bl"></a>
-                <div class="blog-excerpt">
-                  <span class="d-block text-muted">Octubre 15, 2019</span>
-                  <h2 class="h4  mb-3"><a href="puno.html">Historia de Puno</a></h2>
+          <div class="col-lg-6">
+            <div class="mb-5 d-block blog-entry" data-aos="fade-right" data-aos-delay="">
+              <a href="cusco.html" class="blog-thumbnail mb-3 d-block"><img src="images/cusco.jpg" alt="Image"
+                  class="bl"></a>
+              <div class="blog-excerpt">
+                <span class="d-block text-muted">Noviembre 20, 2019</span>
+                <h2 class="h4  mb-3"><a href="cusco.html">Historia de Cusco</a></h2>
 
-                  <p>Antes de la llegada de los españoles, la ciudad de Puno, era una aldea, tenía como escenario la Bahía del Lago Titikaka, formaba una población marginal localizada entre los linderos de los territorios de los Kollas (Quechuas) al norte y los Lupacas (Aymaras) al sur.</p>
-                  <p><a href="puno.html" class="text-primary">Leer más</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-5 d-block blog-entry" data-aos="fade-right" data-aos-delay="">
-                <a href="cusco.html" class="blog-thumbnail mb-3 d-block"><img src="images/cusco.jpg" alt="Image" class="bl"></a>
-                <div class="blog-excerpt">
-                  <span class="d-block text-muted">Noviembre 20, 2019</span>
-                  <h2 class="h4  mb-3"><a href="cusco.html">Historia de Cusco</a></h2>
-
-                  <p>Los reyes incas, hijos del Sol, gobernaron un vasto imperio, el Tahuantinsuyo, cuyo centro era Qosqo, que significa "ombligo". Y esta ciudad era, verdaderamente, el centro del imperio, desde el cual partían los caminos que llevaban a las cuatro "partes del universo".</p>
-                  <p><a href="cusco.html" class="text-primary">Leer más</a></p>
-                </div>
+                <p>Los reyes incas, hijos del Sol, gobernaron un vasto imperio, el Tahuantinsuyo, cuyo centro era Qosqo,
+                  que significa "ombligo". Y esta ciudad era, verdaderamente, el centro del imperio, desde el cual
+                  partían los caminos que llevaban a las cuatro "partes del universo".</p>
+                <p><a href="cusco.html" class="text-primary">Leer más</a></p>
               </div>
             </div>
           </div>
-          </center>
+        </div>
+      </center>
+    </div>
 
-    
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -762,77 +761,107 @@
             <div class="row">
               <div class="col-md-7">
                 <h2 class="footer-heading mb-4">Acerca de nosotros</h2>
-                <p>En los últimos años hemos logrado construir una solida empresa de transporte de pasajeros aliando novedosas estrategias y servicios premium para nuestros pasajeros.</p>
+                <p>En los últimos años hemos logrado construir una solida empresa de transporte de pasajeros aliando
+                  novedosas estrategias y servicios premium para nuestros pasajeros.</p>
               </div>
-              
+
             </div>
           </div>
           <div class="col-md-4 ml-auto">
 
             <div class="mb-5">
-                <div id="mc_embed_signup">
-                    <form action="https://gmail.us5.list-manage.com/subscribe/post?u=d785755dfe2e3e67afd77c2c1&amp;id=7351c662e8" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
-                    <div id="mc_embed_signup_scroll">
+              <div id="mc_embed_signup">
+                <form
+                  action="https://gmail.us5.list-manage.com/subscribe/post?u=d785755dfe2e3e67afd77c2c1&amp;id=7351c662e8"
+                  class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form"
+                  novalidate="" target="_blank">
+                  <div id="mc_embed_signup_scroll">
                     <h2>Quieres un regalo?</h2>
-                    
-                    <div class="mc-field-group"><label for="mce-FNAME">First Name <span class="asterisk">*</span> </label> <input class="required" id="mce-FNAME" name="FNAME" type="text" value="" /></div>
-                    
-                    <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label> <input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value="" /></div>
-                    
+
+                    <div class="mc-field-group"><label for="mce-FNAME">First Name <span class="asterisk">*</span>
+                      </label> <input class="required" id="mce-FNAME" name="FNAME" type="text" value="" /></div>
+
+                    <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                      </label> <input class="required email" id="mce-EMAIL" name="EMAIL" type="email" value="" />
+                    </div>
+
                     <div class="clear" id="mce-responses">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    
-                    <div class="response" id="mce-success-response" style="display:none"></div>
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+
+                      <div class="response" id="mce-success-response" style="display:none"></div>
                     </div>
                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    
-                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input name="b_d785755dfe2e3e67afd77c2c1_7351c662e8" tabindex="-1" type="text" value="" /></div>
-                    
-                    <div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" /></div>
-                    </div>
-                    </form>
-                    </div>
-                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script><!--End mc_embed_signup--><script src="styles/bootstrap-4.1.2/popper.js"></script><script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script><script src="plugins/greensock/TweenMax.min.js"></script><script src="plugins/greensock/TimelineMax.min.js"></script><script src="plugins/scrollmagic/ScrollMagic.min.js"></script><script src="plugins/greensock/animation.gsap.min.js"></script><script src="plugins/greensock/ScrollToPlugin.min.js"></script><script src="plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script><script src="plugins/easing/easing.js"></script><script src="plugins/progressbar/progressbar.min.js"></script><script src="plugins/parallax-js-master/parallax.min.js"></script><script src="plugins/jquery-datepicker/jquery-ui.js"></script><script src="plugins/colorbox/jquery.colorbox-min.js"></script><script src="js/custom.js"></script></html>
-            </div>
+
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;"><input
+                        name="b_d785755dfe2e3e67afd77c2c1_7351c662e8" tabindex="-1" type="text" value="" /></div>
+
+                    <div class="clear"><input class="button" id="mc-embedded-subscribe" name="subscribe" type="submit"
+                        value="Subscribe" /></div>
+                  </div>
+                </form>
+              </div>
+              <script type='text/javascript'
+                src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+              <script
+                type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[0] = 'EMAIL'; ftypes[0] = 'email'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+              <!--End mc_embed_signup-->
+              <script src="styles/bootstrap-4.1.2/popper.js"></script>
+              <script src="styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+              <script src="plugins/greensock/TweenMax.min.js"></script>
+              <script src="plugins/greensock/TimelineMax.min.js"></script>
+              <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+              <script src="plugins/greensock/animation.gsap.min.js"></script>
+              <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+              <script src="plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+              <script src="plugins/easing/easing.js"></script>
+              <script src="plugins/progressbar/progressbar.min.js"></script>
+              <script src="plugins/parallax-js-master/parallax.min.js"></script>
+              <script src="plugins/jquery-datepicker/jquery-ui.js"></script>
+              <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+              <script src="js/custom.js"></script>
+
+</html>
+</div>
 
 
-            <h2 class="footer-heading mb-4">Siguenos</h2>
-            <a href="#https://www.facebook.com/cusela/" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
-            <a href="#https://www.youtube.com/channel/UCo_s81KeKodDbmRwtQ5Xt0Q" class="pl-3 pr-3"><span class="icon-youtube"></span></a>
-            </form>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="icon-heart" aria-hidden="true"></i></a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-
+<h2 class="footer-heading mb-4">Siguenos</h2>
+<a href="#https://www.facebook.com/cusela/" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+<a href="#https://www.youtube.com/channel/UCo_s81KeKodDbmRwtQ5Xt0Q" class="pl-3 pr-3"><span
+    class="icon-youtube"></span></a>
+</form>
+</div>
+</div>
+<div class="row pt-5 mt-5 text-center">
+  <div class="col-md-12">
+    <div class="border-top pt-5">
+      <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script> All rights reserved<i class="icon-heart"
+          aria-hidden="true"></i></a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
     </div>
+  </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/aos.js"></script>
+</div>
+</div>
+</footer>
 
-    <script src="js/main.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/aos.js"></script>
+
+<script src="js/main.js"></script>
 
 
-  </body>
+</body>
 
 </html>
